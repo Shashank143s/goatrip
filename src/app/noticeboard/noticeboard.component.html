@@ -1,0 +1,22 @@
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"> -->
+<div class="container" style="width:100%">
+  <div class="row">
+      <div class="col-md-10 offset-md-1 card-columns" style="column-count:4;">
+          <a id="nbModal" class="btn-floating btn-large waves-light red pulse" (click)="modalTrigger()"><i class="material-icons">add</i></a>
+          <div class="card card-inverse {{update.color}}" id="GameOfCards" *ngFor="let update of updates | async ;">
+            <img class="card-img-top img-fluid" src={{update.image}}>
+            <!-- <button type="button" class="close" id={{update.key}} (click)="removeElement(update.key)"><i class="material-icons">&#xE5CD;</i></button> -->
+            <div class="card-block">
+              <h4 class="card-title text-left" style="word-wrap:break-word;">{{update.title}}</h4>
+              <p class="card-text text-left" style="word-wrap:break-word;">{{update.content}}</p>
+              <p class="card-text text-right"><small style="color:white;">- {{update.name}}</small></p>
+            </div>
+          </div>
+        </div>
+        <app-modal [modalToggler]="modalDisplay"></app-modal>
+        <div class="modal-overlay" (click)="hideMe()" style="z-index: 1006; display: none; opacity: 0.5;"></div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/esm/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

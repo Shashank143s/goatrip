@@ -1,0 +1,25 @@
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"> -->
+<div class="container">
+  <div class="row">
+<div class="col-md-8 offset-md-2 card-columns">
+  <div class="card" *ngFor="let ppl of peoples">
+      <!-- <div class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active" style="display: -webkit-box;"> -->
+              <img class="card-img-top img-fluid" src="{{ppl.imageurl[0]}}" alt="First slide">
+            <!-- </div>
+          </div>
+        </div> -->
+    <!-- <img class="card-img-top img-fluid" src={{ppl.imageurl}} alt="Card image cap"> -->
+    <div class="card-block">
+      <h4 class="card-title">{{ppl.name}}</h4>
+      <p class="card-text">{{ppl.context}}</p>
+      <p class="card-text"><small class="text-muted align-right">{{ppl.place}}</small></p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/esm/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

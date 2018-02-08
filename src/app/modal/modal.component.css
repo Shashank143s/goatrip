@@ -1,0 +1,21 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css');
+
+.radio-red[type="radio"].filled-in:checked + label:after{
+    border: 2px solid #BD4E4E;
+    background-color: #BD4E4E;
+}
+.radio-green[type="radio"].filled-in:checked + label:after{
+    border: 2px solid #467E41;
+    background-color: #467E41;
+}
+.radio-blue[type="radio"].filled-in:checked + label:after{
+    border: 2px solid #2366E2;
+    background-color: #2366E2;
+}
+.radio-yellow[type="radio"].filled-in:checked + label:after{
+    border: 2px solid #ce7a04;
+    background-color: #ce7a04;
+}
+.row{
+  margin:0px;
+}
