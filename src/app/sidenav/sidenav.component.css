@@ -12,6 +12,12 @@
   right:10px;
 }
 
+#chat{
+  position:fixed;
+  bottom:10px;
+  right:10px;
+}
+
 .tap-target{
   height:70%;
   width:70%;

@@ -13,26 +13,26 @@ export class ModalLoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+
   }
 
   loginSetup(){
-    var pword = $('#pword').val();
-    var uname = $('#uname').val();
-    if(pword === '' || uname === '' || uname === undefined){
+    let pword = $('#pword').val();
+    let uname = $('#uname').val();
+    if (pword === '' || uname === '' || uname === undefined) {
       alert('Please enter correct details');
     }
-    else if(pword === 'Kabeela' || uname !== '' ){
-      localStorage.setItem('username',uname);
-      people.forEach(data=>{
-        if(data.name === uname){
-        localStorage.setItem('imagesrc',data.imageurl[0]);
+    else if (pword === 'Kabeela' || uname !== '' ) {
+      localStorage.setItem('username', uname);
+      people.forEach(data => {
+        if (data.name === uname) {
+        localStorage.setItem('imagesrc', data.imageurl[0]);
       }
       });
       $('.modal').css('display', 'none');
       console.log(localStorage.getItem('imagesrc'));
     }
-    else{
+    else {
       alert('Username or Password wrong!');
     }
   }

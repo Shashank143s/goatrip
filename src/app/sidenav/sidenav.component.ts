@@ -1,4 +1,4 @@
-import { Component,ViewChild,OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 declare var jquery: any;
 declare var $: any;
 
@@ -9,14 +9,21 @@ declare var $: any;
 })
 
 export class SidenavComponent implements OnInit {
+    modalVisibility: Boolean = false;
+    ngOnInit() {
+    }
 
-    ngOnInit(){
+    toggleSideNav() {
+      $('.tap-target').tapTarget('open');
+      $('.tap-target-content').css('padding', '0px');
+    }
+
+    showLoginModal() {
       $('.modal').css('display', 'block');
     }
 
-    toggleSideNav(){
-      $('.tap-target').tapTarget('open');
-      $('.tap-target-content').css('padding','0px');
+    maximizeChatWindow() {
+      $('.wrapper').animate({ 'max-height': '520px'}, 'slow');
     }
 
 }

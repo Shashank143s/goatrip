@@ -1,5 +1,6 @@
   <a id="menu" class=" waves-light btn btn-floating pulse" (click)="toggleSideNav()" ><i class="material-icons">menu</i></a>
-  <a id="login" class="btn btn-floating pulse"  ><i class="material-icons">account_circle</i></a>
+  <a id="login" class="btn btn-floating pulse"><i class="material-icons" (click)="showLoginModal()">account_circle</i></a>
+  <a id="chat" class="btn btn-floating pulse"><i class="material-icons" (click)="maximizeChatWindow()">chat</i></a>
 
   <!-- Tap Target Structure -->
   <div class="tap-target" data-activates="menu">
@@ -19,6 +20,5 @@
   </div>
 
   <!-- Login modal-->
-  <app-modal-login></app-modal-login>
+  <app-modal-login ></app-modal-login>
 
-  
