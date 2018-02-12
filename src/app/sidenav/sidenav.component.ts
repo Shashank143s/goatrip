@@ -10,7 +10,9 @@ declare var $: any;
 
 export class SidenavComponent implements OnInit {
 
-    ngOnInit(){}
+    ngOnInit(){
+      $('.modal').css('display', 'block');
+    }
 
     toggleSideNav(){
       $('.tap-target').tapTarget('open');

@@ -10,12 +10,18 @@ declare var $: any;
   styleUrls: ['./chat-interface.component.css']
 })
 export class ChatInterfaceComponent implements OnInit {
-  message : any;
-  constructor(private appService:AppService) { }
+  message : Array<any> = [];
+  imagesrc :any;
+  constructor(private appService:AppService) { 
+    this.imagesrc = localStorage.getItem('imagesrc');
+  }
 
   ngOnInit() {
     this.appService.getMessage().subscribe((data)=>{
+      console.log(data);
       this.message.push(data);
+      console.log('mess',this.message);
+      //this.message = data;
     });
   }
 

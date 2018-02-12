@@ -21,7 +21,8 @@ import { ModalComponent } from './modal/modal.component';
 //Services
 import { UploadService } from './modal/shared/upload.service';
 import { AppService } from './app.service';
-import { ChatInterfaceComponent } from './chat-interface/chat-interface.component'
+import { ChatInterfaceComponent } from './chat-interface/chat-interface.component';
+import { ModalLoginComponent } from './modal-login/modal-login.component'
 
 //configuartion for socket.io connection
 const config: SocketIoConfig = { url: 'https://intense-river-80828.herokuapp.com/', options: {} };
@@ -34,7 +35,8 @@ const config: SocketIoConfig = { url: 'https://intense-river-80828.herokuapp.com
     CdtimerComponent,
     NoticeboardComponent,
     ModalComponent,
-    ChatInterfaceComponent
+    ChatInterfaceComponent,
+    ModalLoginComponent
   ],
   imports: [
     BrowserModule,
