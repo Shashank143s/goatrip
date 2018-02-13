@@ -16,12 +16,13 @@ body {
 
 .wrapper {
   height: 520px;
-  width: 320px;
+  max-height:0px;
+  width: 30%;
   overflow: hidden;
   background-color: white;
   position: fixed;
-  top: 100px;
-  left: 50%;
+  bottom:0px;
+  left: 70%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   -webkit-box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.5);
@@ -44,6 +45,8 @@ body {
   padding: 10.6666666667px;
   position: relative;
   margin-bottom: 32px;
+  overflow-y:scroll;
+  max-height:500px;
 }
 
 .nav {
@@ -97,7 +100,7 @@ body {
 .nav .default-nav .main-nav .options {
   height: 32px;
   width: 32px;
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/104946/ic_more_vert_white_48dp.png);
+  background: url('/assets/minus.png');
   background-size: contain;
   margin: 16px;
   position: absolute;
@@ -135,6 +138,7 @@ body {
   right: 0;
   height: 64px;
   background: #ffffff;
+  border-top: 2px solid lightGrey;
   /* box-shadow: 0px -3px 3px 0px rgba(50, 50, 50, 0.1); */
 }
 .bottom .input {

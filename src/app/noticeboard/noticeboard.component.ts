@@ -34,7 +34,7 @@ export class NoticeboardComponent implements OnInit {
   }
 
   removeElement(key : string){
-    console.log(key)
+    // console.log(key)
     this.itemsRef.remove(key);
   }
 

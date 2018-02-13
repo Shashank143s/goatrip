@@ -12,6 +12,18 @@
   right:10px;
 }
 
+#user{
+  position:fixed;
+  top:10px;
+  right:40%;
+}
+
+#chat{
+  position:fixed;
+  bottom:10px;
+  right:10px;
+}
+
 .tap-target{
   height:70%;
   width:70%;

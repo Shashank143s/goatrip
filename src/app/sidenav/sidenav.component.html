@@ -1,5 +1,7 @@
   <a id="menu" class=" waves-light btn btn-floating pulse" (click)="toggleSideNav()" ><i class="material-icons">menu</i></a>
-  <a id="login" class="btn btn-floating pulse"  ><i class="material-icons">account_circle</i></a>
+  <a id="login" class="btn btn-floating pulse tooltipped" data-position="left" data-delay="50" data-tooltip="Login" *ngIf="loggedInBtn"><i class="material-icons" (click)="showLoginModal()">account_circle</i></a>
+  <div id="user" class="btn" *ngIf="!loggedInBtn"><i class="material-icons" style="font-size:18px;">person_pin</i>{{loggedUser}}</div>
+  <a id="chat" class="btn btn-floating pulse tooltipped" *ngIf="!loggedInBtn" data-position="top" data-delay="50" data-tooltip="Chat with Kabeela"><i class="material-icons" (click)="maximizeChatWindow()">chat</i></a>
 
   <!-- Tap Target Structure -->
   <div class="tap-target" data-activates="menu">
@@ -19,6 +21,5 @@
   </div>
 
   <!-- Login modal-->
-  <app-modal-login></app-modal-login>
+  <app-modal-login (loggedIn)="loggedInData($event)"></app-modal-login>
 
-  
