@@ -13,7 +13,7 @@ export class ChatInterfaceComponent implements OnInit {
   message : Array<any> = [];
   imagesrc :any;
   constructor(private appService:AppService) { 
-    this.imagesrc = localStorage.getItem('imagesrc');
+    this.imagesrc = localStorage.getItem('imagesrc')
   }
 
   ngOnInit() {
