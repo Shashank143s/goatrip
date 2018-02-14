@@ -27,7 +27,7 @@ export class SidenavComponent implements OnInit {
     }
 
     maximizeChatWindow() {
-      $('.wrapper').animate({ 'max-height': '520px'}, 'slow');
+      $('.wrapper').css( 'display','block');
     }
 
     loggedInData(data){

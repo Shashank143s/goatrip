@@ -11,6 +11,7 @@ declare var $ :any;
 export class ModalLoginComponent implements OnInit {
   @Output()
   loggedIn : EventEmitter<any> = new EventEmitter<any>();
+  userExists:Boolean =false;
   constructor() { }
 
   ngOnInit() {}
@@ -26,14 +27,24 @@ export class ModalLoginComponent implements OnInit {
       people.forEach(data => {
         if (data.name === uname) {
           localStorage.setItem('imagesrc', data.imageurl[0]);
+          this.userExists = true;
         }
       });
-      $('.modal').animate({ 'right' : '-30%'}, 'slow');
-      this.loggedIn.emit(true);
+      if(!this.userExists){
+        alert("Username is incorrect");
+      }
+      else{
+        $('.modal').animate({ 'right' : '-30%'}, 'slow');
+        this.loggedIn.emit(true);
+      }
     }
     else {
       alert('Username or Password wrong!');
     }
+  }
+
+  closeLoginModal(){
+    $('.modal').animate({ 'right' : '-30%'},'slow');
   }
 
 }

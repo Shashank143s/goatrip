@@ -35,7 +35,7 @@ export class ChatInterfaceComponent implements OnInit {
   }
 
   minimizeChat() {
-    $('.wrapper').animate({ 'max-height': '0%'}, 'slow');
+    $('.wrapper').css( 'display','none');
   }
 
 }

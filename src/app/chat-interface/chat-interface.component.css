@@ -15,8 +15,8 @@ body {
 }
 
 .wrapper {
+  display: none;
   height: 520px;
-  max-height:0px;
   width: 30%;
   overflow: hidden;
   background-color: white;
@@ -206,14 +206,15 @@ body {
 .message-wrapper .text-wrapper {
   padding: 10.6666666667px;
   min-height: 42.6666666667px;
-  width: 60%;
+  width: auto;
+  max-width:70%;
   margin: 0 10.6666666667px;
   -webkit-box-shadow: 0px 1px 0px 0px rgba(50, 50, 50, 0.3);
           box-shadow: 0px 1px 0px 0px rgba(50, 50, 50, 0.3);
   border-radius: 2px;
   font-weight: 300;
   position: relative;
-  /* word-break: break-all; */
+   word-break: break-all; 
   opacity: 1;
 }
 .message-wrapper .text-wrapper:before {
