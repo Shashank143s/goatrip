@@ -16,6 +16,7 @@ export class CdtimerComponent implements OnInit {
   secondString: String;
   dayString: String;
 
+
   constructor() {
     this.updateTimer();
   }

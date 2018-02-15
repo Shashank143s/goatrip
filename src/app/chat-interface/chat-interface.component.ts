@@ -9,29 +9,36 @@ declare var $: any;
   templateUrl: './chat-interface.component.html',
   styleUrls: ['./chat-interface.component.css']
 })
+
 export class ChatInterfaceComponent implements OnInit {
   message: Array<any> = [];
   imagesrc: any;
   @ViewChild('msgInput') textarea : ElementRef;
+  @ViewChild('iterableDiv') iterator : ElementRef;
 
-  constructor(private appService: AppService) {
-    //this.imagesrc = localStorage.getItem('imagesrc');
-  }
+  constructor(private appService: AppService) {}
 
   ngOnInit() {
     this.appService.getMessage().subscribe((data) => {
-      // console.log(data);
-      this.message.push(data);
-      var elem = document.getElementById('inner');
-      elem.scrollTop = elem.scrollHeight;
-      // console.log('mess', this.message);
-      //this.message = data;
+      //Code to adjust scroll height automatically when a new message comes
+      //this.iterator.nativeElement.lastChild();
+        this.message.push(data);
+        //Code fix for auto scroll on new incoming message
+        setTimeout(()=>{
+          var elem = document.getElementById('content');
+          elem.scrollTop = elem.scrollHeight;
+          console.log(elem.scrollTop);
+        });
+
+      // console.log(this.message);
     });
   }
 
   emitMessage(data) {
-    this.appService.sendMessage({name: localStorage.getItem('username'), message: data, imagesrc: localStorage.getItem('imagesrc') });
-    this.textarea.nativeElement.value = '';
+    if(this.textarea.nativeElement.value !== ''){
+      this.appService.sendMessage({name: localStorage.getItem('username'), message: data, imagesrc: localStorage.getItem('imagesrc') });
+      this.textarea.nativeElement.value = '';
+    }
   }
 
   minimizeChat() {

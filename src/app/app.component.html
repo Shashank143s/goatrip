@@ -1,6 +1,7 @@
-<app-sidenav></app-sidenav>
-<router-outlet></router-outlet>
-<app-chat-interface></app-chat-interface>
+<app-sidenav *ngIf="!showSpinner"></app-sidenav>
+<router-outlet *ngIf="!showSpinner"></router-outlet>
+<app-chat-interface *ngIf="!showSpinner"></app-chat-interface>
+<app-spinner *ngIf="showSpinner"></app-spinner>
 <!-- <app-people></app-people> -->
 <!-- <app-cdtimer></app-cdtimer> -->
 <!-- <app-noticeboard></app-noticeboard> -->

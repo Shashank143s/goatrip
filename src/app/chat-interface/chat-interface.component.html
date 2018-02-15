@@ -10,7 +10,7 @@
   </nav>
 
   <div class="inner" id="inner">
-    <div class="content" id="content">
+    <div class="content" id="content" #iterableDiv>
   <div *ngFor="let item of message">
       <div class="message-wrapper them">
         <img class="circle-wrapper" [src]="item.imagesrc"/>

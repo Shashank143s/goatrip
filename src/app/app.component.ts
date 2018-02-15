@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
+  showSpinner : Boolean = true;
   title = 'Kabeela';
+
+  ngOnInit(){
+    setTimeout(()=>{
+      this.showSpinner = false;
+    },3000);
+    
+  }
 }
