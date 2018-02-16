@@ -9,7 +9,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 //ng-socket-io import for chat application
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
-
+//import Emoji library
+import {EmojiPickerModule} from 'ng-emoji-picker';
 // import { AngularFireStorageModule } from 'firebase/storage';
  // import { MaterialModule } from './material-module';
 import { SidenavComponent } from './sidenav/sidenav.component';
@@ -42,6 +43,7 @@ const config: SocketIoConfig = { url: 'https://intense-river-80828.herokuapp.com
   ],
   imports: [
     BrowserModule,
+    EmojiPickerModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),

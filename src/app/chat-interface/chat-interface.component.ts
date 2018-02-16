@@ -14,6 +14,7 @@ declare var PNotify:any;
 export class ChatInterfaceComponent implements OnInit {
   message: Array<any> = [];
   imagesrc: any;
+  openPopup: Function;
   recievedMessage: any = {
     name : '',
     imagesrc : '',
@@ -39,10 +40,10 @@ export class ChatInterfaceComponent implements OnInit {
         //   body: this.recievedMessage.message,
         // });
 
-        new PNotify({
-          title: 'Regular Notice',
-          text: 'Check me out! I\'m a notice.'
-        });
+        // new PNotify({
+        //   title: 'Regular Notice',
+        //   text: 'Check me out! I\'m a notice.'
+        // });
 
         //Code fix for auto scroll on new incoming message
         setTimeout(()=>{
@@ -56,14 +57,18 @@ export class ChatInterfaceComponent implements OnInit {
   }
 
   emitMessage(data) {
-    if(this.textarea.nativeElement.value !== ''){
+    // if(this.textarea.nativeElement.value !== ''){
       this.appService.sendMessage({name: localStorage.getItem('username'), message: data, imagesrc: localStorage.getItem('imagesrc') });
-      this.textarea.nativeElement.value = '';
-    }
+      // this.textarea.nativeElement.value = '';
+    // }
   }
 
   minimizeChat() {
     $('.wrapper').css( 'display','none');
   }
 
+  
+  setPopupAction(fn: any) {
+      this.openPopup = fn;
+  }
 }

@@ -31,6 +31,7 @@ export class ModalComponent implements OnInit {
   uploading : Boolean = false;
   uploaded : Boolean = false;
 
+
   constructor(private db: AngularFireDatabase, private upSvc: UploadService) {
     this.itemsRef = db.list("/sticky");
     this.updates = this.itemsRef.snapshotChanges().map(changes => {
@@ -119,5 +120,6 @@ export class ModalComponent implements OnInit {
     this.selectedOption = event.target.value;
     console.log(this.selectedOption);
   }
+
 
 }
