@@ -14,6 +14,11 @@ export class AppComponent implements OnInit {
     setTimeout(()=>{
       this.showSpinner = false;
     },3000);
-    
+    this.notificationPermission();  
+  }
+
+  notificationPermission() {
+    console.log("Notification");
+    Notification.requestPermission();
   }
 }

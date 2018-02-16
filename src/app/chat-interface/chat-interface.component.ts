@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AppService } from '../app.service';
 declare var jquery: any;
 declare var $: any;
+declare var PNotify:any;
 
 
 @Component({
@@ -13,6 +14,13 @@ declare var $: any;
 export class ChatInterfaceComponent implements OnInit {
   message: Array<any> = [];
   imagesrc: any;
+  recievedMessage: any = {
+    name : '',
+    imagesrc : '',
+    message : ''
+  };
+
+
   @ViewChild('msgInput') textarea : ElementRef;
   @ViewChild('iterableDiv') iterator : ElementRef;
 
@@ -20,9 +28,22 @@ export class ChatInterfaceComponent implements OnInit {
 
   ngOnInit() {
     this.appService.getMessage().subscribe((data) => {
+      this.recievedMessage = data;
       //Code to adjust scroll height automatically when a new message comes
       //this.iterator.nativeElement.lastChild();
         this.message.push(data);
+        
+        //PUSH A NOTIFICATION ON RECIEVING A MESSAGE
+        // new Notification(this.recievedMessage.name, {
+        //   icon: this.recievedMessage.imagesrc,
+        //   body: this.recievedMessage.message,
+        // });
+
+        new PNotify({
+          title: 'Regular Notice',
+          text: 'Check me out! I\'m a notice.'
+        });
+
         //Code fix for auto scroll on new incoming message
         setTimeout(()=>{
           var elem = document.getElementById('content');
